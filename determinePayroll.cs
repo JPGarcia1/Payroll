@@ -57,8 +57,6 @@ namespace Payroll_test
         }
         public void screenPrint()
         {
-            StreamWriter sw = new StreamWriter("EmployedPayroll.txt", true);
-
             Console.WriteLine($"\nEmployed document: {myData.Document}\n");
             Console.WriteLine($"Employed first name: {myData.FirstName}\n");
             Console.WriteLine($"Employed last name: {myData.LastName}\n");
@@ -69,13 +67,24 @@ namespace Payroll_test
             Console.WriteLine($"Employed pension discount: {myData.PensionDiscount}\n");
             Console.WriteLine($"Employed total accrue: {myData.TotalAccrue}\n");
 
-            sw.WriteLine(myData.Document+"\n"+ myData.FirstName+ "\n" + myData.LastName+ "\n" + myData.Salary+ "\n" + myData.WorkedDays
-                + "\n" + myData.TransportSupport+ "\n" + myData.HealtDiscount+ "\n" + myData.PensionDiscount+ "\n" + myData +TotalAccrue+"\n");
-
-            sw.Close();
-
             Console.WriteLine("Type any key to exit");
             string next = Console.ReadLine();
+        }
+        public void TextWriter()
+        {
+            StreamWriter sw = new StreamWriter("EmployedPayroll.txt", true);
+
+            sw.WriteLine($"Employed document: {myData.Document}\n");
+            sw.WriteLine($"Employed first name: {myData.FirstName}\n");
+            sw.WriteLine($"Employed last name: {myData.LastName}\n");
+            sw.WriteLine($"Employed salary: {myData.Salary}\n");
+            sw.WriteLine($"Employed worked days: {myData.WorkedDays}\n");
+            sw.WriteLine($"Employed transport support if applicable: {myData.TransportSupport}\n");
+            sw.WriteLine($"Employed healt discount: {myData.HealtDiscount}\n");
+            sw.WriteLine($"Employed pension discount: {myData.PensionDiscount}\n");
+            sw.WriteLine($"Employed total accrue: {myData.TotalAccrue}\n");
+
+            sw.Close();
         }
     }
 }

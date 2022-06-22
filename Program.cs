@@ -27,6 +27,7 @@ namespace Payroll_test
                     case "1":
                         payroll.payroll();
                         payroll.screenPrint();
+                        payroll.TextWriter();
                         break;
                     case "2":
                         Console.WriteLine("\nLeaving the program.");
